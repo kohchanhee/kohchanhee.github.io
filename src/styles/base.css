@@ -1,0 +1,29 @@
+﻿body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background:
+    linear-gradient(135deg, rgba(81, 113, 164, 0.28), transparent 36%),
+    linear-gradient(180deg, var(--deep-space-blue), var(--deep-navy) 58%);
+  isolation: isolate;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: -20%;
+  background:
+    radial-gradient(circle at 18% 30%, rgba(53, 69, 148, 0.2), transparent 32%),
+    radial-gradient(circle at 78% 18%, rgba(57, 98, 39, 0.13), transparent 26%),
+    radial-gradient(circle at 72% 80%, rgba(104, 53, 53, 0.16), transparent 32%);
+  filter: blur(24px);
+  opacity: 0.62;
+  pointer-events: none;
+  animation: background-drift 28s ease-in-out infinite alternate;
+  z-index: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

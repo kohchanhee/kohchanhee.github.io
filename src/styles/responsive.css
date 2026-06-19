@@ -1,0 +1,215 @@
+﻿@media (max-width: 860px) {
+  .site-shell {
+    padding: 24px 0;
+  }
+
+  .hero,
+  .work-hero,
+  .fun-hero,
+  .experience-section {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding-top: 32px;
+  }
+
+  .portrait-panel {
+    align-items: center;
+    margin-bottom: 8px;
+  }
+
+  .portrait-gallery-shell {
+    width: min(100%, 380px);
+    max-width: 100%;
+  }
+
+  .section-heading {
+    display: block;
+  }
+
+  .section-heading > p {
+    margin-top: 14px;
+  }
+
+  .work-lanes {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin: 30px 0;
+  }
+
+  .experience-section {
+    gap: 30px;
+    padding: 32px 0;
+  }
+
+  .experience-selector {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .experience-tab {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 10px;
+  }
+
+  .experience-logo {
+    width: 52px;
+    height: 40px;
+    padding: 4px;
+  }
+
+  .experience-logo[data-logo="gi"] img {
+    width: 36px;
+    height: 28px;
+  }
+
+  .experience-logo[data-logo="activision-blizzard"] img,
+  .experience-logo[data-logo="umn"] img {
+    max-width: 42px;
+    max-height: 30px;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .music-list,
+  .ffxiv-feature,
+  .other-games-layout,
+  .dance-feature {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .other-games-copy {
+    padding: 4px 0 0;
+    border-left: 0;
+  }
+
+  .music-copy {
+    margin-bottom: 16px;
+    padding: 4px 0 0;
+    border-left: 0;
+  }
+
+  .ffxiv-feature {
+    margin-bottom: 24px;
+  }
+
+  .experience-heading svg,
+  .work-section-heading > div svg,
+  .fun-section-heading svg {
+    transform: translateY(-5px);
+  }
+}
+
+@media (max-width: 700px) {
+  .landing-note {
+    grid-template-columns: 1fr;
+  }
+
+  .landing-emblem {
+    justify-self: center;
+  }
+
+  .experience-selector {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-tab {
+    min-height: 76px;
+  }
+}
+
+@media (max-width: 520px) {
+  .site-shell {
+    width: min(100% - 20px, 1120px);
+  }
+
+  .site-nav {
+    align-items: center;
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .brand-mark {
+    flex: 0 0 40px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .brand-mark img {
+    width: 28px;
+    height: 28px;
+  }
+
+  .page-tabs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    flex: 1 1 auto;
+    min-width: 0;
+    width: auto;
+  }
+
+  .tab-button {
+    gap: 6px;
+    padding: 0 8px;
+  }
+
+  .experience-logo {
+    width: 48px;
+    height: 36px;
+  }
+
+  .experience-logo[data-logo="gi"] img {
+    width: 32px;
+    height: 25px;
+  }
+
+  .experience-logo[data-logo="activision-blizzard"] img,
+  .experience-logo[data-logo="umn"] img {
+    max-width: 38px;
+    max-height: 28px;
+  }
+
+  .landing-note {
+    padding: 20px;
+  }
+
+  .hero-copy {
+    --hero-copy-gap: 12px;
+    padding: 20px 0;
+  }
+
+  .landing-note {
+    --landing-note-space: 20px;
+  }
+
+  .portrait-gallery-shell {
+    width: min(100%, 320px);
+  }
+
+  h1 {
+    font-size: clamp(2.9rem, 18vw, 4.6rem);
+  }
+
+}
+
+@media (max-width: 340px) {
+  .tab-button {
+    padding: 0;
+  }
+
+  .tab-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+}

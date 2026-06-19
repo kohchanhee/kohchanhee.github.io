@@ -1,0 +1,134 @@
+﻿.site-shell {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 32px 0 56px;
+  position: relative;
+  z-index: 1;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 0;
+}
+
+.brand-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--white);
+  overflow: hidden;
+}
+
+.brand-mark img {
+  display: block;
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+}
+
+.page-tabs {
+  display: inline-flex;
+  gap: 6px;
+  padding: 6px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(11, 41, 66, 0.7);
+  backdrop-filter: blur(18px);
+}
+
+.tab-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 0 14px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font: inherit;
+  font-weight: 800;
+}
+
+.tab-button:hover,
+.tab-button:focus-visible {
+  color: var(--white);
+  outline: 1px solid rgba(193, 193, 193, 0.32);
+  outline-offset: -1px;
+}
+
+.tab-button[data-page="home"]:hover,
+.tab-button[data-page="home"]:focus-visible {
+  background: #354594;
+}
+
+.tab-button[data-page="work"]:hover,
+.tab-button[data-page="work"]:focus-visible {
+  background: #396227;
+}
+
+.tab-button[data-page="fun"]:hover,
+.tab-button[data-page="fun"]:focus-visible {
+  background: #683535;
+}
+
+.tab-button[aria-selected="true"] {
+  color: var(--white);
+  outline: 1px solid rgba(255, 255, 255, 0.52);
+  outline-offset: -1px;
+}
+
+.tab-button[data-page="home"][aria-selected="true"] {
+  background: #354594;
+}
+
+.tab-button[data-page="work"][aria-selected="true"] {
+  background: #396227;
+}
+
+.tab-button[data-page="fun"][aria-selected="true"] {
+  background: #683535;
+}
+
+.tab-button[aria-selected="true"]:hover,
+.tab-button[aria-selected="true"]:focus-visible {
+  filter: brightness(1.08);
+}
+
+.tab-icon {
+  display: block;
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+.tab-label {
+  white-space: nowrap;
+}
+
+.page-panel {
+  animation: page-in 180ms ease-out;
+}
+
+@keyframes page-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
