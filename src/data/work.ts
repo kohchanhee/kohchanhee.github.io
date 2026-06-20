@@ -68,7 +68,7 @@ export const experienceItems: ExperienceItem[] = [
       alt: "",
     },
     summary:
-      "You may be wondering what Production Developer means. I'm not entirely sure either, but I did a lot of stuff.",
+      "You may be wondering what Production Developer means. I'm not entirely sure either, but I do a lot of stuff.",
     highlightGroups: [
       {
         title: "Web",
