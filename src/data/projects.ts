@@ -25,12 +25,12 @@ export const projects: Project[] = [
     visual: "site",
   },
   {
-    title: "TBD",
+    title: "Gimme Da Loot",
     description:
-      "Haven't gotten around to any side projects yet.",
-    tags: ["Production", "Design", "Operations"],
+      "Web app for organizing loot for FFXIV statics. My raid leader had a nice spreadsheet so I figured I'd take a stab at making it a little more polished.",
+    tags: ["React", "Vercel", "JSON"],
     status: "WIP",
-    emphasis: "???",
+    emphasis: "Web App",
   },
   {
     title: "Game?",
