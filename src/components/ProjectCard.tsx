@@ -7,10 +7,13 @@ type ProjectCardProps = {
 };
 
 export function ProjectCard({ project }: ProjectCardProps) {
-  return (
-    <article className="project-card">
+  const cardContent = (
+    <>
       {project.media ? (
-        <div className="project-media">
+        <div
+          className="project-media"
+          data-variant={project.media.variant}
+        >
           {project.media.kind === "image" ? (
             <img src={project.media.src} alt={project.media.alt} />
           ) : (
@@ -49,10 +52,30 @@ export function ProjectCard({ project }: ProjectCardProps) {
       </div>
       <div className="project-title-row">
         <h3>{project.title}</h3>
-        <ArrowUpRight size={18} aria-hidden="true" />
+        {project.href ? <ArrowUpRight size={18} aria-hidden="true" /> : null}
       </div>
       <p>{project.description}</p>
       <TagRow ariaLabel={`${project.title} tags`} tags={project.tags} />
+    </>
+  );
+
+  if (project.href) {
+    return (
+      <a
+        aria-label={`Open ${project.title}`}
+        className="project-card project-card-link"
+        href={project.href}
+        rel="noreferrer"
+        target="_blank"
+      >
+        {cardContent}
+      </a>
+    );
+  }
+
+  return (
+    <article className="project-card">
+      {cardContent}
     </article>
   );
 }

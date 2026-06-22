@@ -10,6 +10,7 @@ export type Project = {
     src: string;
     alt: string;
     poster?: string;
+    variant?: "icon";
   };
   href?: string;
 };
@@ -31,6 +32,13 @@ export const projects: Project[] = [
     tags: ["React", "Vercel", "JSON"],
     status: "WIP",
     emphasis: "Web App",
+    media: {
+      kind: "image",
+      src: "/media/projects/gimme-da-loot-icon.png",
+      alt: "Gimme Da Loot treasure chest app icon",
+      variant: "icon",
+    },
+    href: "https://gimmedaloot.vercel.app/",
   },
   {
     title: "Game?",
