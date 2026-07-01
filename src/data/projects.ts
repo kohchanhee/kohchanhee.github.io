@@ -30,7 +30,7 @@ export const projects: Project[] = [
     description:
       "Web app for organizing loot for FFXIV statics. My raid leader had a nice spreadsheet so I figured I'd take a stab at making it a little more polished.",
     tags: ["React", "JSON", "Vercel", "Supabase"],
-    status: "Beta",
+    status: "Live",
     emphasis: "Web App",
     media: {
       kind: "image",
