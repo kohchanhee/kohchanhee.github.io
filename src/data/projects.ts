@@ -19,7 +19,7 @@ export const projects: Project[] = [
   {
     title: "This Site",
     description:
-      "I figured Codex might be a good way to finally get the portfolio going and learn React. I have a portfolio now, but I barely learned any React. AI is too powerful.",
+      "This is my portfolio. There are many like it, but this one is mine. Not the most flashy, but fun and practical.",
     tags: ["Codex", "React", "Frontend"],
     status: "Live",
     emphasis: "Website",
@@ -29,16 +29,16 @@ export const projects: Project[] = [
     title: "Gimme Da Loot",
     description:
       "Web app for organizing loot for FFXIV statics. My raid leader had a nice spreadsheet so I figured I'd take a stab at making it a little more polished.",
-    tags: ["React", "Vercel", "JSON"],
-    status: "WIP",
+    tags: ["React", "JSON", "Vercel", "Supabase"],
+    status: "Beta",
     emphasis: "Web App",
     media: {
       kind: "image",
       src: "/media/projects/gimme-da-loot-icon.png",
-      alt: "Gimme Da Loot treasure chest app icon",
+      alt: "Gimme Da Loot coffer app icon",
       variant: "icon",
     },
-    href: "https://gimmedaloot.vercel.app/",
+    href: "https://gimmedaloot.app/",
   },
   {
     title: "Game?",
