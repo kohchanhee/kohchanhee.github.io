@@ -45,18 +45,16 @@ export function ExperienceSection() {
 
   return (
     <section className="experience-section" aria-labelledby="experience-title">
-      <div className="experience-rail">
-        <div className="experience-heading">
-          <BriefcaseBusiness size={20} aria-hidden="true" />
-          <h2 id="experience-title">Work Experience</h2>
-        </div>
-
-        <ExperienceSelector
-          activeExperience={activeExperience}
-          experienceItems={experienceItems}
-          onSelectExperience={selectExperience}
-        />
+      <div className="experience-heading">
+        <BriefcaseBusiness size={20} aria-hidden="true" />
+        <h2 id="experience-title">Work Experience</h2>
       </div>
+
+      <ExperienceSelector
+        activeExperience={activeExperience}
+        experienceItems={experienceItems}
+        onSelectExperience={selectExperience}
+      />
 
       <ExperienceDetail
         activeHighlight={activeHighlight}

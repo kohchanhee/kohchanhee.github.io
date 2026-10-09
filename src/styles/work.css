@@ -27,17 +27,15 @@
 .experience-section {
   display: grid;
   grid-template-columns: minmax(240px, 0.42fr) minmax(0, 0.58fr);
-  gap: 36px;
+  gap: var(--section-heading-gap) 36px;
   align-items: start;
   margin-top: 0;
   padding: var(--section-space) 0;
   border-block: 1px solid var(--line);
 }
 
-.experience-rail {
-  display: grid;
-  align-content: start;
-  gap: 28px;
+.experience-heading {
+  grid-column: 1 / -1;
 }
 
 .experience-heading,
@@ -57,7 +55,7 @@
 }
 
 .experience-heading h2 {
-  max-width: 430px;
+  max-width: none;
   color: var(--white);
   font-size: var(--section-title-size);
   transform: translateY(0.06em);
@@ -330,12 +328,16 @@ h2 {
 .featured-project {
   display: grid;
   grid-template-columns: minmax(0, 0.36fr) minmax(0, 0.64fr);
-  align-items: center;
+  align-items: start;
   gap: 36px;
   margin-bottom: 32px;
 }
 
 .featured-project-copy { min-width: 0; }
+
+.featured-project .card-topline {
+  min-height: 40px;
+}
 
 .featured-project-kind {
   display: inline-flex;

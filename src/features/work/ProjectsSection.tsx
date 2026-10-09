@@ -14,7 +14,6 @@ export function ProjectsSection() {
           <Laptop size={20} aria-hidden="true" />
           <h2 id="projects-title">Projects</h2>
         </div>
-        <p>Non-work related things that probably belong on this page</p>
       </div>
 
       {featuredProject ? <FeaturedProject project={featuredProject} /> : null}

@@ -52,12 +52,8 @@
   }
 
   .experience-section {
-    gap: 24px;
+    gap: var(--section-heading-gap) 24px;
     padding: var(--section-space) 0;
-  }
-
-  .experience-rail {
-    gap: var(--section-heading-gap);
   }
 
   .experience-detail {
