@@ -1,6 +1,7 @@
 import { ArrowUpRight } from "lucide-react";
 import type { Project } from "../data/projects";
 import { TagRow } from "./TagRow";
+import { ResponsiveImage } from "./ResponsiveImage";
 
 type ProjectCardProps = {
   project: Project;
@@ -15,13 +16,14 @@ export function ProjectCard({ project }: ProjectCardProps) {
           data-variant={project.media.variant}
         >
           {project.media.kind === "image" ? (
-            <img src={project.media.src} alt={project.media.alt} />
+            <ResponsiveImage src={project.media.src} alt={project.media.alt} sizes="120px" />
           ) : (
             <video
               aria-label={project.media.alt}
               controls
               muted
               playsInline
+              preload="none"
               poster={project.media.poster}
             >
               <source src={project.media.src} />
@@ -62,7 +64,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
   if (project.href) {
     return (
       <a
-        aria-label={`Open ${project.title}`}
+        aria-label={`Open ${project.title} (opens in a new tab)`}
         className="project-card project-card-link"
         href={project.href}
         rel="noreferrer"

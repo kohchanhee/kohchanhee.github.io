@@ -1,6 +1,6 @@
 ﻿:root {
   color: #ffffff;
-  background: #090b38;
+  background: var(--paper);
   font-family:
     var(--font-body), ui-sans-serif, system-ui, -apple-system,
     BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -15,13 +15,33 @@
   --ink: var(--white);
   --muted: rgba(255, 255, 255, 0.74);
   --soft: rgba(193, 193, 193, 0.72);
-  --paper: var(--deep-navy);
-  --panel: rgba(11, 41, 66, 0.78);
-  --panel-strong: rgba(11, 41, 66, 0.94);
-  --line: rgba(193, 193, 193, 0.22);
+  --midnight: #060918;
+  --paper: var(--midnight);
+  --panel: rgba(16, 23, 49, 0.86);
+  --panel-strong: rgba(18, 27, 56, 0.96);
+  --surface-sheen: linear-gradient(
+    155deg,
+    rgba(255, 255, 255, 0.055),
+    rgba(255, 255, 255, 0.012) 28%,
+    transparent 52%
+  );
+  --surface-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 20px 56px rgba(0, 0, 0, 0.2);
+  --line: rgba(157, 177, 225, 0.22);
   --accent: var(--smart-blue);
   --font-body: "Fustat";
   --font-heading: "Manjari";
+  --section-space: 44px;
+  --section-heading-gap: 28px;
+  --section-title-size: 3.1rem;
+  --page-title-size: 4rem;
+  --control-duration: 160ms;
+  --control-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --content-duration: 320ms;
+  --content-stagger: 60ms;
+  --content-change-duration: 220ms;
+  --focus-ring: #a9c9ff;
 }
 
 * {

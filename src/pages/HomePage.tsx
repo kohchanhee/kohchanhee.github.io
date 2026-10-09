@@ -3,7 +3,7 @@ import { LandingNote } from "../features/home/LandingNote";
 
 export function HomePage() {
   return (
-    <section className="page-panel active-page" id="home-page" role="tabpanel">
+    <section className="page-panel active-page" id="home-page" aria-labelledby="hero-title">
       <HomeHero />
       <LandingNote />
     </section>

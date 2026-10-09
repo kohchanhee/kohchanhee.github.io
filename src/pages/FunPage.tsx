@@ -9,7 +9,6 @@ export function FunPage() {
       aria-labelledby="fun-title"
       className="page-panel fun-page active-page"
       id="fun-page"
-      role="tabpanel"
     >
       <FunHero />
       <GamingSection />

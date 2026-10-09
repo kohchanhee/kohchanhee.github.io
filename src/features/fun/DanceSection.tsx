@@ -1,5 +1,6 @@
 import { Sparkles } from "lucide-react";
 import { danceFeature } from "../../data/fun";
+import { DanceVideo } from "./DanceVideo";
 
 export function DanceSection() {
   return (
@@ -15,14 +16,7 @@ export function DanceSection() {
           ))}
         </div>
         {danceFeature.video ? (
-          <video
-            controls
-            playsInline
-            poster={danceFeature.video.poster}
-            preload="metadata"
-          >
-            <source src={danceFeature.video.src} />
-          </video>
+          <DanceVideo key={danceFeature.video.src} {...danceFeature.video} />
         ) : (
           <div className="dance-video-placeholder" aria-hidden="true">
             <span />

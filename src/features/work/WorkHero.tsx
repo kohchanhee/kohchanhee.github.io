@@ -2,13 +2,12 @@ export function WorkHero() {
   return (
     <div className="work-hero">
       <div>
-        <h2 className="work-title" id="work-title">
+        <h1 className="work-title" id="work-title" tabIndex={-1}>
           Because I Need To
-        </h2>
+        </h1>
       </div>
       <p>
-        If you're here to determine if I'm capable of the work you want me to
-        do, then this is the right place.
+        I have approximate knowledge of many things. Here are some of those things
       </p>
     </div>
   );

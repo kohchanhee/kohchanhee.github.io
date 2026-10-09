@@ -7,7 +7,9 @@ export function HomeHero() {
       <PortraitGallery />
 
       <div className="hero-copy">
-        <h1 id="hero-title">Jon Woodey</h1>
+        <h1 id="hero-title" tabIndex={-1}>
+          Jon Woodey
+        </h1>
         <p className="hero-lede">Just some guy, really.</p>
         <div className="contact-note" aria-label="Contact note">
           <Github size={18} aria-hidden="true" />

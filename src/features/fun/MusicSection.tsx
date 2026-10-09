@@ -1,7 +1,18 @@
 import { Music2 } from "lucide-react";
+import { lazy, Suspense, useRef } from "react";
 import { musicTracks } from "../../data/fun";
 
+const MusicPlayer = lazy(() =>
+  import("./MusicPlayer").then((module) => ({ default: module.MusicPlayer })),
+);
+
 export function MusicSection() {
+  const activeAudio = useRef<HTMLAudioElement | null>(null);
+  const handlePlay = (audio: HTMLAudioElement) => {
+    if (activeAudio.current !== audio) activeAudio.current?.pause();
+    activeAudio.current = audio;
+  };
+
   return (
     <section className="fun-section music-section" aria-labelledby="music-title">
       <div className="fun-section-heading">
@@ -18,12 +29,18 @@ export function MusicSection() {
       </div>
       <div className="music-list">
         {musicTracks.map((track) => (
-          <article className="music-track" key={track.title}>
+          <article className="music-track" key={track.src}>
             <div>
-              <h4>{track.title}</h4>
+              <h3>{track.title}</h3>
               <p>{track.detail}</p>
             </div>
-            <audio controls preload="metadata" src={track.src} />
+            <Suspense
+              fallback={
+                <div className="music-player-loading" aria-label={`Loading ${track.title} player`} />
+              }
+            >
+              <MusicPlayer track={track} onPlay={handlePlay} />
+            </Suspense>
           </article>
         ))}
       </div>

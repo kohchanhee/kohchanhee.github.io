@@ -38,9 +38,15 @@ export function ExperienceDetail({
         />
       </div>
 
-      <h3>{selectedExperience.role}</h3>
-      <p className="experience-place">{selectedExperience.place}</p>
-      <p>{selectedExperience.summary}</p>
+      <h3 className="content-change" key={`role-${selectedExperience.place}`}>
+        {selectedExperience.role}
+      </h3>
+      <p className="experience-place content-change" key={`place-${selectedExperience.place}`}>
+        {selectedExperience.place}
+      </p>
+      <p className="content-change" key={`summary-${selectedExperience.place}`}>
+        {selectedExperience.summary}
+      </p>
 
       <div className="highlight-carousel">
         <div className="highlight-tabs" aria-label="Experience highlight groups">
@@ -69,8 +75,10 @@ export function ExperienceDetail({
               previousLabel="Show previous highlight group"
             />
           </div>
-          <h4>{selectedHighlight.title}</h4>
-          <ul>
+          <h4 className="content-change" key={`title-${selectedExperience.place}-${selectedHighlight.title}`}>
+            {selectedHighlight.title}
+          </h4>
+          <ul className="content-change" key={`bullets-${selectedExperience.place}-${selectedHighlight.title}`}>
             {selectedHighlight.bullets.map((highlight) => (
               <li key={highlight}>{highlight}</li>
             ))}

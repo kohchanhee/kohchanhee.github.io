@@ -1,51 +1,39 @@
-import type { MouseEvent } from "react";
 import { pages } from "../data/navigation";
 import type { Page } from "../types";
 
 type SiteNavigationProps = {
   activePage: Page;
-  onPageChange: (page: Page) => void;
 };
 
-export function SiteNavigation({
-  activePage,
-  onPageChange,
-}: SiteNavigationProps) {
-  const goHome = (event: MouseEvent<HTMLAnchorElement>) => {
-    event.preventDefault();
-    onPageChange("home");
-
-    window.requestAnimationFrame(() => {
-      document.getElementById("home-page")?.scrollIntoView({ block: "start" });
-    });
-  };
-
+export function SiteNavigation({ activePage }: SiteNavigationProps) {
   return (
     <nav className="site-nav" aria-label="Main navigation">
       <a
         aria-label="Go to home page"
         className="brand-mark"
-        href="#home-page"
-        onClick={goHome}
+        href="#/home"
+        onClick={() => {
+          if (activePage === "home") {
+            window.scrollTo({ top: 0, behavior: "instant" });
+            document.getElementById("hero-title")?.focus({ preventScroll: true });
+          }
+        }}
       >
-        <img src="/penguin.png" alt="Home" />
+        <img src="/penguin.png" alt="" width={34} height={34} />
       </a>
 
-      <div className="page-tabs" role="tablist" aria-label="Portfolio pages">
+      <div className="page-tabs">
         {pages.map(({ id, label, iconSrc }) => (
-          <button
-            aria-controls={`${id}-page`}
-            aria-selected={activePage === id}
+          <a
+            aria-current={activePage === id ? "page" : undefined}
             className="tab-button"
             data-page={id}
             key={id}
-            onClick={() => onPageChange(id)}
-            role="tab"
-            type="button"
+            href={`#/${id}`}
           >
             <img src={iconSrc} alt="" aria-hidden="true" className="tab-icon" />
             <span className="tab-label">{label}</span>
-          </button>
+          </a>
         ))}
       </div>
     </nav>

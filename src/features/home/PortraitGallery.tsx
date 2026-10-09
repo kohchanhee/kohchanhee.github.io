@@ -1,6 +1,7 @@
 import type { PointerEvent } from "react";
 import { useRef, useState } from "react";
 import { GalleryControls } from "../../components/GalleryControls";
+import { ResponsiveImage } from "../../components/ResponsiveImage";
 import { profileImages } from "../../data/profile";
 import { getNextIndex, getPreviousIndex } from "../../lib/carousel";
 import type { GalleryDirection } from "../../types";
@@ -36,7 +37,9 @@ export function PortraitGallery() {
   };
 
   const handleGalleryPointerDown = (event: PointerEvent<HTMLDivElement>) => {
+    if (!event.isPrimary || event.button !== 0) return;
     galleryDragStart.current = event.clientX;
+    event.currentTarget.setPointerCapture(event.pointerId);
   };
 
   const handleGalleryPointerUp = (event: PointerEvent<HTMLDivElement>) => {
@@ -58,41 +61,85 @@ export function PortraitGallery() {
     }
   };
 
+  const updatePortraitLight = (event: PointerEvent<HTMLDivElement>) => {
+    if (
+      event.pointerType !== "mouse" ||
+      !window.matchMedia(
+        "(hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)",
+      ).matches
+    ) {
+      return;
+    }
+
+    const bounds = event.currentTarget.getBoundingClientRect();
+    const x = Math.max(0, Math.min(1, (event.clientX - bounds.left) / bounds.width));
+    const y = Math.max(0, Math.min(1, (event.clientY - bounds.top) / bounds.height));
+    const { style, dataset } = event.currentTarget;
+    style.setProperty("--portrait-tilt-x", `${(0.5 - y) * 5}deg`);
+    style.setProperty("--portrait-tilt-y", `${(x - 0.5) * 5}deg`);
+    style.setProperty("--portrait-shine-x", `${x * 100}%`);
+    style.setProperty("--portrait-shine-y", `${y * 100}%`);
+    dataset.lit = "true";
+  };
+
+  const resetPortraitLight = (event: PointerEvent<HTMLDivElement>) => {
+    delete event.currentTarget.dataset.lit;
+    event.currentTarget.style.removeProperty("--portrait-tilt-x");
+    event.currentTarget.style.removeProperty("--portrait-tilt-y");
+  };
+
   return (
-    <aside className="portrait-panel" aria-label="Portrait gallery">
+    <aside className="portrait-panel" aria-label="Portrait gallery" aria-roledescription="carousel">
       <div className="portrait-gallery-shell">
-        <img
-          alt=""
-          aria-hidden="true"
-          className="gallery-card-back back-one"
-          src={previousPortrait.src}
-          style={{ objectPosition: previousPortrait.objectPosition }}
-        />
-        <img
-          alt=""
-          aria-hidden="true"
-          className="gallery-card-back back-two"
-          src={nextPortrait.src}
-          style={{ objectPosition: nextPortrait.objectPosition }}
-        />
         <div
-          aria-label="Portrait gallery"
-          className="portrait-gallery"
-          data-direction={galleryDirection}
-          key={activePortrait.src}
-          onPointerCancel={() => {
-            galleryDragStart.current = null;
-          }}
-          onPointerDown={handleGalleryPointerDown}
-          onPointerUp={handleGalleryPointerUp}
+          className="portrait-stack"
+          onPointerMove={updatePortraitLight}
+          onPointerLeave={resetPortraitLight}
         >
-          <img
-            src={activePortrait.src}
-            alt={activePortrait.alt}
-            className="portrait-slide"
-            style={{ objectPosition: activePortrait.objectPosition }}
-          />
+          <div className="portrait-card-scene">
+            <ResponsiveImage
+              alt=""
+              aria-hidden="true"
+              className="gallery-card-back back-one"
+              src={previousPortrait.src}
+              sizes="(max-width: 520px) 320px, (max-width: 860px) 380px, 420px"
+              style={{ objectPosition: previousPortrait.objectPosition }}
+            />
+            <ResponsiveImage
+              alt=""
+              aria-hidden="true"
+              className="gallery-card-back back-two"
+              src={nextPortrait.src}
+              sizes="(max-width: 520px) 320px, (max-width: 860px) 380px, 420px"
+              style={{ objectPosition: nextPortrait.objectPosition }}
+            />
+            <div
+              aria-label="Portrait gallery"
+              className="portrait-gallery"
+              data-direction={galleryDirection}
+              key={activePortrait.src}
+              onPointerCancel={() => {
+                galleryDragStart.current = null;
+              }}
+              onPointerDown={handleGalleryPointerDown}
+              onPointerUp={handleGalleryPointerUp}
+            >
+              <ResponsiveImage
+                src={activePortrait.src}
+                alt={activePortrait.alt}
+                className="portrait-slide"
+                draggable={false}
+                loading="eager"
+                fetchPriority="high"
+                sizes="(max-width: 520px) 320px, (max-width: 860px) 380px, 420px"
+                style={{ objectPosition: activePortrait.objectPosition }}
+              />
+            </div>
+          </div>
         </div>
+        <p className="sr-only" aria-live="polite" aria-atomic="true">
+          Portrait {activeImage + 1} of {profileImages.length}: {activePortrait.alt}
+        </p>
         <GalleryControls
           activeIndex={activeImage}
           ariaLabel="Portrait controls"

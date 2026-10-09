@@ -1,5 +1,6 @@
 import type { CSSProperties } from "react";
 import { clearedFfxivTags, ffxivFeature } from "../../data/fun";
+import { ResponsiveImage } from "../../components/ResponsiveImage";
 
 export function FfxivFeaturePanel() {
   return (
@@ -24,7 +25,8 @@ export function FfxivFeaturePanel() {
         </div>
       </div>
       <div className="ffxiv-visual" aria-hidden="true">
-        <img src="/media/games/ffxiv.jpg" alt="" />
+        <ResponsiveImage src="/media/games/ffxiv.jpg" alt=""
+          sizes="(max-width: 860px) calc(100vw - 32px), 360px" />
       </div>
     </article>
   );

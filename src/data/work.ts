@@ -1,12 +1,3 @@
-export type WorkLane = {
-  title: string;
-  description: string;
-  image: {
-    src: string;
-    alt: string;
-  };
-};
-
 export type ExperienceHighlight = {
   title: string;
   eyebrow: string;
@@ -26,36 +17,6 @@ export type ExperienceItem = {
   highlightGroups: ExperienceHighlight[];
   tools: string[];
 };
-
-export const workLanes: WorkLane[] = [
-  {
-    title: "Agreeable",
-    description:
-      "I will do what you tell me to, unless I can't. Everyone talks about being a good leader, but it's important to remember good leaders need good followers.",
-    image: {
-      src: "/media/work-lanes/agreeable.jpg",
-      alt: "Decorative image for agreeable work style",
-    },
-  },
-  {
-    title: "Versatile",
-    description:
-      "I have approximate knowledge of many things. A jack of all trades if you will. Maybe more like a 10 or a 9 of all trades. Still a great card in blackjack.",
-    image: {
-      src: "/media/work-lanes/versatile.jpg",
-      alt: "Decorative image for versatile work style",
-    },
-  },
-  {
-    title: "Navy SEAL",
-    description:
-      'I\'m not a Navy SEAL, but I like one of their mottos: "Slow is smooth, smooth is fast." That does not always sit well with C-Suite and shareholders though.',
-    image: {
-      src: "/media/work-lanes/navyseal.jpg",
-      alt: "Decorative image for slow is smooth work style",
-    },
-  },
-];
 
 export const experienceItems: ExperienceItem[] = [
   {

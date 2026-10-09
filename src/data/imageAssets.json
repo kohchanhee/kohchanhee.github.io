@@ -1,0 +1,116 @@
+{
+  "/media/profile/full_body.jpg": {
+    "src": "/media/optimized/profile/full_body-960.webp",
+    "srcSet": "/media/optimized/profile/full_body-480.webp 480w, /media/optimized/profile/full_body-960.webp 960w, /media/optimized/profile/full_body-1440.webp 1440w",
+    "width": 3859,
+    "height": 5781
+  },
+  "/media/profile/me1.jpg": {
+    "src": "/media/optimized/profile/me1-960.webp",
+    "srcSet": "/media/optimized/profile/me1-480.webp 480w, /media/optimized/profile/me1-960.webp 960w, /media/optimized/profile/me1-1264.webp 1264w",
+    "width": 1264,
+    "height": 1265
+  },
+  "/media/profile/me2.jpg": {
+    "src": "/media/optimized/profile/me2-624.webp",
+    "srcSet": "/media/optimized/profile/me2-480.webp 480w, /media/optimized/profile/me2-624.webp 624w",
+    "width": 624,
+    "height": 624
+  },
+  "/media/profile/me3.jpg": {
+    "src": "/media/optimized/profile/me3-960.webp",
+    "srcSet": "/media/optimized/profile/me3-480.webp 480w, /media/optimized/profile/me3-960.webp 960w, /media/optimized/profile/me3-1440.webp 1440w",
+    "width": 1600,
+    "height": 1600
+  },
+  "/media/profile/me4.jpg": {
+    "src": "/media/optimized/profile/me4-960.webp",
+    "srcSet": "/media/optimized/profile/me4-480.webp 480w, /media/optimized/profile/me4-960.webp 960w, /media/optimized/profile/me4-1440.webp 1440w",
+    "width": 1600,
+    "height": 1600
+  },
+  "/media/profile/me5.jpg": {
+    "src": "/media/optimized/profile/me5-960.webp",
+    "srcSet": "/media/optimized/profile/me5-480.webp 480w, /media/optimized/profile/me5-960.webp 960w, /media/optimized/profile/me5-1440.webp 1440w",
+    "width": 1600,
+    "height": 1600
+  },
+  "/media/profile/square_shot.jpg": {
+    "src": "/media/optimized/profile/square_shot-960.webp",
+    "srcSet": "/media/optimized/profile/square_shot-480.webp 480w, /media/optimized/profile/square_shot-960.webp 960w, /media/optimized/profile/square_shot-1440.webp 1440w",
+    "width": 3859,
+    "height": 3859
+  },
+  "/media/work-lanes/agreeable.jpg": {
+    "src": "/media/optimized/work-lanes/agreeable-888.webp",
+    "srcSet": "/media/optimized/work-lanes/agreeable-480.webp 480w, /media/optimized/work-lanes/agreeable-888.webp 888w",
+    "width": 888,
+    "height": 888
+  },
+  "/media/work-lanes/navyseal.jpg": {
+    "src": "/media/optimized/work-lanes/navyseal-612.webp",
+    "srcSet": "/media/optimized/work-lanes/navyseal-480.webp 480w, /media/optimized/work-lanes/navyseal-612.webp 612w",
+    "width": 612,
+    "height": 612
+  },
+  "/media/work-lanes/versatile.jpg": {
+    "src": "/media/optimized/work-lanes/versatile-360.webp",
+    "srcSet": "/media/optimized/work-lanes/versatile-360.webp 360w",
+    "width": 360,
+    "height": 360
+  },
+  "/media/games/balatro.jpg": {
+    "src": "/media/optimized/games/balatro-460.webp",
+    "srcSet": "/media/optimized/games/balatro-460.webp 460w",
+    "width": 460,
+    "height": 215
+  },
+  "/media/games/clairobscur.jpg": {
+    "src": "/media/optimized/games/clairobscur-460.webp",
+    "srcSet": "/media/optimized/games/clairobscur-460.webp 460w",
+    "width": 460,
+    "height": 215
+  },
+  "/media/games/ffxiv.jpg": {
+    "src": "/media/optimized/games/ffxiv-960.webp",
+    "srcSet": "/media/optimized/games/ffxiv-480.webp 480w, /media/optimized/games/ffxiv-960.webp 960w, /media/optimized/games/ffxiv-1440.webp 1440w",
+    "width": 1600,
+    "height": 900
+  },
+  "/media/games/fireemblem.jpg": {
+    "src": "/media/optimized/games/fireemblem-860.webp",
+    "srcSet": "/media/optimized/games/fireemblem-480.webp 480w, /media/optimized/games/fireemblem-860.webp 860w",
+    "width": 860,
+    "height": 430
+  },
+  "/media/games/stardewvalley.jpg": {
+    "src": "/media/optimized/games/stardewvalley-860.webp",
+    "srcSet": "/media/optimized/games/stardewvalley-480.webp 480w, /media/optimized/games/stardewvalley-860.webp 860w",
+    "width": 860,
+    "height": 484
+  },
+  "/media/projects/gimme-da-loot-dashboard.jpg": {
+    "src": "/media/optimized/projects/gimme-da-loot-dashboard-960.webp",
+    "srcSet": "/media/optimized/projects/gimme-da-loot-dashboard-480.webp 480w, /media/optimized/projects/gimme-da-loot-dashboard-960.webp 960w, /media/optimized/projects/gimme-da-loot-dashboard-1440.webp 1440w",
+    "width": 1584,
+    "height": 891
+  },
+  "/media/projects/gimme-da-loot-drops.jpg": {
+    "src": "/media/optimized/projects/gimme-da-loot-drops-960.webp",
+    "srcSet": "/media/optimized/projects/gimme-da-loot-drops-480.webp 480w, /media/optimized/projects/gimme-da-loot-drops-960.webp 960w, /media/optimized/projects/gimme-da-loot-drops-1440.webp 1440w",
+    "width": 1584,
+    "height": 891
+  },
+  "/media/projects/gimme-da-loot-icon.png": {
+    "src": "/media/optimized/projects/gimme-da-loot-icon-717.webp",
+    "srcSet": "/media/optimized/projects/gimme-da-loot-icon-480.webp 480w, /media/optimized/projects/gimme-da-loot-icon-717.webp 717w",
+    "width": 717,
+    "height": 717
+  },
+  "/media/projects/gimme-da-loot-planner.jpg": {
+    "src": "/media/optimized/projects/gimme-da-loot-planner-960.webp",
+    "srcSet": "/media/optimized/projects/gimme-da-loot-planner-480.webp 480w, /media/optimized/projects/gimme-da-loot-planner-960.webp 960w, /media/optimized/projects/gimme-da-loot-planner-1440.webp 1440w",
+    "width": 1584,
+    "height": 891
+  }
+}

@@ -25,6 +25,11 @@
   background: rgba(255, 255, 255, 0.08);
   color: var(--white);
   overflow: hidden;
+  transition: background var(--control-duration) var(--control-ease);
+}
+
+.brand-mark:hover {
+  background: rgba(81, 113, 164, 0.28);
 }
 
 .brand-mark img {
@@ -40,7 +45,8 @@
   padding: 6px;
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: rgba(11, 41, 66, 0.7);
+  background: var(--surface-sheen), rgba(13, 20, 43, 0.82);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(18px);
 }
 
@@ -58,6 +64,9 @@
   cursor: pointer;
   font: inherit;
   font-weight: 800;
+  transition:
+    background var(--control-duration) var(--control-ease),
+    color var(--control-duration) var(--control-ease);
 }
 
 .tab-button:hover,
@@ -82,27 +91,32 @@
   background: #683535;
 }
 
-.tab-button[aria-selected="true"] {
+.tab-button[aria-current="page"] {
   color: var(--white);
   outline: 1px solid rgba(255, 255, 255, 0.52);
   outline-offset: -1px;
 }
 
-.tab-button[data-page="home"][aria-selected="true"] {
+.tab-button[data-page="home"][aria-current="page"] {
   background: #354594;
 }
 
-.tab-button[data-page="work"][aria-selected="true"] {
+.tab-button[data-page="work"][aria-current="page"] {
   background: #396227;
 }
 
-.tab-button[data-page="fun"][aria-selected="true"] {
+.tab-button[data-page="fun"][aria-current="page"] {
   background: #683535;
 }
 
-.tab-button[aria-selected="true"]:hover,
-.tab-button[aria-selected="true"]:focus-visible {
+.tab-button[aria-current="page"]:hover,
+.tab-button[aria-current="page"]:focus-visible {
   filter: brightness(1.08);
+}
+
+.tab-button:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
 }
 
 .tab-icon {
@@ -116,19 +130,62 @@
   white-space: nowrap;
 }
 
-.page-panel {
-  animation: page-in 180ms ease-out;
+.page-panel h1,
+.hero > .portrait-panel,
+.hero-copy > :not(h1),
+.work-hero > p,
+.fun-hero > p,
+.page-panel > :not(.hero, .work-hero, .fun-hero) {
+  animation: content-in var(--content-duration) var(--control-ease) backwards;
 }
 
-@keyframes page-in {
+.hero > .portrait-panel,
+.hero-copy > :not(h1),
+.work-hero > p,
+.fun-hero > p {
+  animation-delay: var(--content-stagger);
+}
+
+.page-panel > :not(.hero, .work-hero, .fun-hero) {
+  animation-delay: calc(var(--content-stagger) * 2);
+}
+
+.content-change {
+  animation: content-change var(--content-change-duration) var(--control-ease);
+}
+
+/* Independent translate preserves the headings' optical alignment transforms. */
+@keyframes content-in {
   from {
     opacity: 0;
-    transform: translateY(8px);
+    translate: 0 8px;
   }
 
   to {
     opacity: 1;
-    transform: translateY(0);
+    translate: 0 0;
+  }
+}
+
+@keyframes content-change {
+  from {
+    opacity: 0.35;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-panel h1,
+  .hero > .portrait-panel,
+  .hero-copy > :not(h1),
+  .work-hero > p,
+  .fun-hero > p,
+  .page-panel > :not(.hero, .work-hero, .fun-hero),
+  .content-change {
+    animation: none;
   }
 }
 

@@ -18,6 +18,7 @@ export type DanceFeature = {
   video?: {
     src: string;
     poster?: string;
+    duration?: number;
   };
 };
 
@@ -86,6 +87,8 @@ export const danceFeature: DanceFeature = {
   ],
   video: {
     src: "/media/videos/20231018.mp4",
+    poster: "/media/videos/dance-poster.webp",
+    duration: 33.958333,
   },
 };
 
